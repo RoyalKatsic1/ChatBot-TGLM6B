@@ -1,0 +1,13 @@
+# Exported from Render on 2024-06-19T15:43:12Z
+services:
+- type: web
+  name: Royal-Katsic-TG-Ai
+  runtime: python
+  repo: https://github.com/RoyalKatsic1/Royal-Katsic-TG-Ai
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: Node main.py
+  autoDeploy: false
+  pullRequestPreviewsEnabled: true
+version: "1"
