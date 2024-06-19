@@ -1,8 +1,8 @@
 #
 # bot.py
 #
-# Twitter@Lakr233
-# 2023-03-18
+# Royalkatsic
+# 2024-06-18
 #
 
 import os
@@ -16,13 +16,13 @@ from telegram.constants import ParseMode
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler
 
 
-print(f"[+] welcome to chat bot")
+print(f"[+] Welcome, This Royal Katsic Ai, How May I help You Today")
 
 script_path = os.path.dirname(os.path.realpath(__file__))
 os.chdir(script_path)
 
-token = 'aaaaaaaaaa:88888888888888888888888888888888888'
-admin_id = ['000000000']
+token = '5636862844:AAGG7jioAoBUoe3KINGbZpQZQFMCBAky1oo'
+admin_id = ['6758634665']
 fine_granted_identifier = []
 
 # load from fine_granted_identifier.json if exists
@@ -64,7 +64,7 @@ class Chat:
         except Exception as e:
             print(f"[!] error chatting: {e}")
             self.history = []
-            return "An error occurred, please try again later. Your conversation history has been reset."
+            return "An error occurred when connecting to Royal Katsic Ai, please try again later. Your conversation history has been reset."
         finally:
             torch.cuda.empty_cache()
 
@@ -189,7 +189,7 @@ async def reset_chat(update: Update, context):
 async def recv_msg(update: Update, context):
     if not check_should_handle(update, context): return
     if not validate_user(update):
-        await update.message.reply_text('Sadly, you are not allowed to use this bot at this time.')
+        await update.message.reply_text('Sadly, you are not allowed to use Royal Katsic Ai bot at this time.')
         return
 
     chat_session = chat_context_container.get(user_identifier(update))
@@ -218,13 +218,13 @@ async def recv_msg(update: Update, context):
     except Exception as e:
         print(f"[!] error: {e}")
         chat_session.reset()
-        await message.edit_text('Error orrurred, please try again later. Your chat history has been reset.')
+        await message.edit_text('Error orrurred when connecting to Royal Katsic Ai, please try again later. Your chat history has been reset.')
 
 async def start_bot(update: Update, context):
     if check_timestamp(update) is False: return
     id = user_identifier(update)
     welcome_strs = [
-        'Welcome to THUDM/ChatGLM-6B made with love by Twitter@Lakr233!',
+        'Welcome to ROYAL KATSIC AI made with love by @Itsroyalkatsic!',
         '',
         'Command: /id to get your chat identifier',
         'Command: /reset to reset the chat history',
@@ -314,7 +314,7 @@ async def reboot(update: Update, context):
         await update.message.reply_text('You are not admin!')
         return
     chat_context_container.clear()
-    await update.message.reply_text('All chat history has been cleared!')
+    await update.message.reply_text('Royal Katsic Ai chat history has been cleared!')
 
 boot_time = datetime.datetime.now()
 
