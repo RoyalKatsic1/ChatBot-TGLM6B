@@ -1,8 +1,8 @@
 #
 # bot.py
 #
-# Twitter@Lakr233
-# 2023-03-18
+# Royalkatsic
+# 2024-06-18
 #
 
 import os
@@ -16,13 +16,13 @@ from telegram.constants import ParseMode
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler
 
 
-print(f"[+] welcome to chat bot")
+print(f"[+] Welcome, This Royal Katsic Ai, How May I help You Today")
 
 script_path = os.path.dirname(os.path.realpath(__file__))
 os.chdir(script_path)
 
-token = 'aaaaaaaaaa:88888888888888888888888888888888888'
-admin_id = ['000000000']
+token = '5636862844:AAGG7jioAoBUoe3KINGbZpQZQFMCBAky1oo'
+admin_id = ['6758634665']
 fine_granted_identifier = []
 
 # load from fine_granted_identifier.json if exists
@@ -64,7 +64,7 @@ class Chat:
         except Exception as e:
             print(f"[!] error chatting: {e}")
             self.history = []
-            return "An error occurred, please try again later. Your conversation history has been reset."
+            return "An error occurred when connecting to Royal Katsic, please try again later. Your conversation history has been reset."
         finally:
             torch.cuda.empty_cache()
 
@@ -174,7 +174,7 @@ def user_identifier(update: Update) -> str:
 
 async def reset_chat(update: Update, context):
     if not validate_user(update):
-        await update.message.reply_text('Sadly, you are not allowed to use this bot at this time.')
+        await update.message.reply_text('Sadly, you are not allowed to use Royal Katsic Ai at this time.')
         return
     if check_timestamp(update) is False: return
 
@@ -189,7 +189,7 @@ async def reset_chat(update: Update, context):
 async def recv_msg(update: Update, context):
     if not check_should_handle(update, context): return
     if not validate_user(update):
-        await update.message.reply_text('Sadly, you are not allowed to use this bot at this time.')
+        await update.message.reply_text('Sadly, you are not allowed to use Royal Katsic Ai at this time.')
         return
 
     chat_session = chat_context_container.get(user_identifier(update))
